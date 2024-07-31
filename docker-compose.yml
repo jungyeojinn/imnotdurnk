@@ -1,0 +1,9 @@
+version: '3'
+services:
+  imnotdurnk-frontend:
+    container_name: imnotdurnk-frontend
+    build: ./imnotdurnk_frontend_web
+    image: imnotdurnk-frontend
+    ports:
+      - '80:80'
+    restart: on-failure
