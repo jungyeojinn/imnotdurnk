@@ -1,0 +1,1 @@
+FROM gradle:7.6.4-jdk-focal AS build
