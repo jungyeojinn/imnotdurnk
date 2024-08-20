@@ -147,3 +147,26 @@
 - 도착지에 도착하면 24시간 내 일정이 있었는지 확인하고 가장 가까운 일정에 도착 시간이 자동으로 기록됩니다.
 
 
+# [5] Acknowledgement
+
+## Frontend
+- [코딩 컨벤션 참고](https://ui.toast.com/fe-guide/ko_CODING-CONVENTION)
+- [TanStack Query(aka. react query) 에서 자주 사용되는 개념 정리](https://github.com/ssi02014/react-query-tutorial?tab=readme-ov-file#react-query-%EA%B8%B0%EB%B3%B8-%EC%84%A4%EC%A0%95)
+- [React Native Global Styles](https://stackoverflow.com/questions/30853178/react-native-global-styles)
+- [useEffect가 아닌 useFocusEffect 사용하여 stack 구조 화면 초기화하기](https://velog.io/@skyu_dev/React-Navigation-Bottom-Tab%EC%9D%98-Require-cycle-warning-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0)
+- [react-native-google-autocomplete를 이용해서 위치 자동완성 기능 만들기](https://velog.io/@acwell94/React-Native-react-native-google-autocomplete%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4%EC%84%9C-%EC%9C%84%EC%B9%98-%EC%9E%90%EB%8F%99%EC%99%84%EC%84%B1-%EA%B8%B0%EB%8A%A5-%EB%A7%8C%EB%93%A4%EA%B8%B0)
+- [가속도 센서를 이용해 움직이는 View 만들기](https://velog.io/@jshme/falling-view-using-accelerometer-sensor)
+
+## Backend
+- [Spring Boot ResponseDto 응답 형태](https://velog.io/@faulty337/Spring-Boot-ResponseDto%EA%B0%80-%ED%95%84%EC%9A%94%ED%95%A0%EA%B9%8C)
+- [Custom Response 생성하기](https://velog.io/@baekgom/Custom-Response-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0)
+- [dto의 toEntity를 어떻게 사용해야할까?](https://hangjastar.tistory.com/246)
+- [Dto와 Entity를 분리하는 이유, 분리하는 방법](https://velog.io/@0sunset0/Dto와-Entity를-분리하는-이유-분리하는-방법)
+- [빌더 패턴의 권장 이유](https://devfunny.tistory.com/337)
+- [Builder Pattern : 장단점](https://kangworld.tistory.com/246)
+- [Docker의 IPTABLES 접근](https://security-gom.tistory.com/65)
+- [hibernate의 ddl-auto 속성의 종류와 주의해야할 점](https://colabear754.tistory.com/136)
+- [Spring Data JPA 는 어떻게 interface 만으로도 동작할까? (feat. reflection, proxy)](https://pingpongdev.tistory.com/25)
+- [Spring Boot JPA 사용하여 회원가입 구현하기](https://gh402.tistory.com/36)
+- [Spring Guide - Directory 패키지 구조 가이드](https://cheese10yun.github.io/spring-guide-directory/)
+- [Spring Boot JPA 사용하여 회원가입 구현하기](https://cheese10yun.github.io/spring-guide-directory/)
