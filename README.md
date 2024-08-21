@@ -1,5 +1,320 @@
 # [음주 습관 개선 서비스] 나안취햄ㅅ어
 
+![image](/uploads/70390f0ecce97de12562eef6e4d8879f/image.png)
+
+# [2] Getting Started
+
+## Prerequisites
+*실행환경 설정하기(Ubuntu 기준) - 설치 소프트웨어, 라이브러리*
+
+### Docker
+1. 충돌 날 수 있는 패키지 삭제
+   ```bash
+   for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
+   ```
+2. apt 로 도커 볼륨 생성
+   ```bash
+   # Add Docker's official GPG key:
+    sudo apt-get update
+    sudo apt-get install ca-certificates curl
+    sudo install -m 0755 -d /etc/apt/keyrings
+    sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+    sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+    # Add the repository to Apt sources:
+    echo \
+      "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+      $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+      sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    sudo apt-get update
+   ```
+3. docker 엔진 최신버전 설치
+   ```Bash
+   sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+   ```
+4. docker 엔진 정상 설치 확인
+   ```
+   sudo docker run hello-world
+   ```
+   - hello-world 가 pull 받아져서 정상 실행된다고 뜨면 성공
+### Node.js
+1. [Node.js 공식사이트-다운로드](https://nodejs.org/en/download/package-manager)
+   ```bash
+    # installs fnm (Fast Node Manager)
+    curl -fsSL https://fnm.vercel.app/install | bash
+
+    # activate fnm
+    source ~/.bashrc
+
+    # download and install Node.js
+    fnm use --install-if-missing 20
+
+    # verifies the right Node.js version is in the environment
+    node -v # should print `v20.16.0`
+
+    # verifies the right npm version is in the environment
+    npm -v # should print `10.8.1`
+   ```
+### MySQL
+1. MySQL Docker 컨테이너 실행
+   ```bash
+    # 이미지 가져오기
+    $ docker pull mysql
+
+    # 컨테이너로 실행 
+    # <password>에 비밀번호(ssafy)를 넣음
+    $ docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=<password> -d -p 3306:3306 mysql
+
+    # 컨테이너로 올린 mysql bash로 접속
+    $ docker exec -it mysql-container bash
+
+    # 루트 사용자로 접속하여 데이터베이스 생성
+    $ mysql -u root -p
+    $ create database `imnotdurnk_db';
+
+    # 존재하는 데이터베이스 목록 확인
+    $ show databases;
+   ```
+### Redis
+1. Docker 이미지 가져오기
+   ```bash
+    # redis 이미지 가져오기
+    $ docker pull redis
+
+    # volume 생성
+    $ docker volume create redis_data
+
+    # 네트워크 생성
+    $ docker network create redis-network --driver bridge
+
+    # redis 환경 설정 파일 생성
+    $ vi redis.conf
+   ```
+2. redis.conf 파일 작성
+   ```bash
+   bind 0.0.0.0
+   port 6379
+   save 900 1
+   ```
+3. 컨테이너 실행
+   ```bash
+   $ docker run \
+   -d \
+   --name redis \
+   -p 6379:6379 \
+   --network redis-network \
+   -v ~/{redis.conf 생성 경로}/redis.conf:/etc/redis/redis.conf \
+   -v redis_data:/data \
+   redis:latest redis-server /etc/redis/redis.conf
+   ```
+### JDK21
+1. JDK21 설치 및 설정
+   ```bash
+    $ sudo apt update
+
+    # 자바 설치
+    $ sudo apt install openjdk-21-jdk
+
+    # 자바 설치 확인
+    $ java -version
+    openjdk version "21.0.3" 2024-04-16
+    OpenJDK Runtime Environment (build 21.0.3+9-Ubuntu-1ubuntu122.04.1)
+    OpenJDK 64-Bit Server VM (build 21.0.3+9-Ubuntu-1ubuntu122.04.1, mixed mode, sharing)
+   ```
+2. JDK 환경변수 설정
+   - bash 환경 : `~/.bashrc`
+   - zsh 환경: `~/.zshrc `
+   ```bash
+   export PATH=%PATH:/bin:/usr/local/bin:/usr/bin
+   export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
+   export PATH=$PATH:$JAVA_HOME/bin
+   ```
+### Gradle
+1. Gradle 공식 홈페이지에서 버전 확인 (8.7.0 사용)
+2. wget 설치
+   ```bash
+   $ sudo apt install wget
+   ```
+3. Gradle 설치
+   ```bash
+   # 설치 파일 다운로드
+    $ wget https://services.gradle.org/distributions/gradle-8.7.0-bin.zip -P /tmp
+
+    # 압축 해제
+    $ sudo unzip -d /opt/gradle /tmp/gradle-8.7.0-bin.zip
+
+    # 압축 해제가 잘 되었는지 확인
+    $ ls /opt/gradle/gradle-8.7.0
+   ```
+4. 환경변수 설정
+   ```bash
+   $ sudo vi /etc/profile.d/gradle.sh
+   ```
+   ```bash
+   $ export GRADLE_HOME=/opt/gradle/gradle-8.7.0
+   $ export PATH=${GRADLE_HOME}/bin:${PATH}
+   ```
+   ```bash
+   # 스크립트 실행
+   $ sudo chmod +x /etc/profile.d/gradle.sh
+   
+   # 환경변수 로드
+   source /etc/profile.d/gradle.sh
+   ```
+5. Gradle 설치 및 버전 확인
+   ```bash
+   $ gradle -v
+   ```
+
+## Installation
+1. Repository 클론
+```bash
+git clone https://lab.ssafy.com/s11-webmobile2-sub2/S11P12A609.git
+```
+
+## Configuration
+*실행을 위해 확인해야 할 부분*
+
+1. `git clone` 이후 React(web) 프로젝트 실행 방법
+   - 주석 처리 되어 있는 api 요청 링크 2개 로컬용으로 변경 (원격용 링크 주석 처리)
+    ```JavaScript
+    // 게임 등 로그인이 필요없는 api 요청시 사용(토큰없이도 요청 가능한 용)
+    const apiNoToken = axios.create({
+        //baseURL: 'http://{back서버 IP주소 또는 도메인}:8080', //로컬용1
+        baseURL: 'https://i11a609.p.ssafy.io/api', // 원격용1
+        timeout: 5000, // 5초 내 서버 응답 없으면 요청 취소
+    });
+
+    const api = axios.create({
+        //baseURL: 'http://{back서버 IP주소 또는 도메인}:8080', //로컬용2
+        baseURL: 'https://i11a609.p.ssafy.io/api', // 원격용2
+        timeout: 5000, // 5초 내 서버 응답 없으면 요청 취소
+        withCredentials: true, // 이게 있어야 refresh Token받을 수 있음
+        //zustand로 저장된 accessToken 불러와서 매 요청의 헤더에 넣기
+    });
+    ```
+     - `npm i`
+     - `npm run dev` →  http://localhost:5173/ 경로에서 로컬 테스트 가능
+2. `git clone` 이후 React Native(mobile) 프로젝트 실행 방법
+     - 앱 화면을 띄울 안드로이드 기기와 유선 연결 (USB 디버깅 및 연결 허용)
+     - `npm i`
+     - `npm start` → `a`
+     - 모바일 앱에서 위치 권한 - “항상 허용” 선택 (백그라운드 위치 추적)
+     - 모바일 앱에서 마이크 액세스 권한 - “앱 사용 중에만 허용” 선택 (음성 게임)
+3. `git clone` 이후 Spring Boot 프로젝트 실행 방법
+     - clone 받은 프로젝트는 환경 변수가 docker-compose 파일에 설정되어있기 때문에 로컬에서 실행시키기위해 application.yml 파일을 아래로 교체해준다.
+     - {} 안의 내용들을 해당하는 내용으로 적절히 수정한다.
+    ```yaml
+    spring:
+      application:
+        name: imnotdurnk_backend
+        title: 나안취햄ㅅ어
+      security: ignored=/**   # 일단 비활성화
+
+      config:
+        import: application-secret.yml
+
+        # DB Setting
+      datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/imnotdurnk_db
+        username: {mysql유저아이디}
+        password: {mysql유저비밀번호}
+      data:
+        redis:
+          host: localhost
+          port: 6379
+          password: {redis비밀번호 없다면 생략}
+      jpa:
+        database: mysql
+        database-platform: org.hibernate.dialect.MySQL8Dialect
+        properties:
+          hibernate:
+            storage_engine: innodb
+            format_sql: true
+            use_sql_comments: true
+            globally_quoted_identifiers: true
+        hibernate:
+          ddl-auto: {최초 실행시: create, 이후: validate}
+        open-in-view: false
+        show-sql: false
+
+      # Mail Setting
+      mail:
+        host: smtp.gmail.com
+        port: 587
+        username: {발송이메일주소}
+        password: {2차 인증 앱 비밀번호(구글)}
+        properties:
+          mail:
+            smtp:
+              debug: true
+              auth: true
+              ssl:
+                enable: false
+                trust: smtp.gmail.com
+              starttls:
+                enable: true
+
+    jwt:
+      expiretime:
+        accesstoken: 1800000 #ms #30분
+        refreshtoken: 432000000 #ms #5일
+      secretkey:
+        accesstoken: {accesstoken}
+        refreshtoken: {refreshtoken}
+
+    cloud:
+      aws:
+        credentials:
+          accessKey: {bucket-accessKey}
+          secretKey: {bucket-secretKey}
+        region:
+          static: {bucket-region}
+        s3:
+          bucket: {bucket-name}
+
+    etri:
+      accessKey: {etri-accesskey}
+
+    Odsay:
+      apikey: {Odsay-apikey}
+
+    logging:
+      level:
+        root: info
+        com:
+          imnotdurnk:
+            domain:
+              auth: info
+              calendar: info
+              map: info
+              gamelog: info
+              user: info
+            global:
+              util: info
+
+    springdoc:
+      swagger-ui:
+        disable-swagger-default-url: true
+        path: /swagger-ui.html
+      api-docs:
+        path: /v3/api-docs
+      show-actuator: true
+      default-produces-media-type: application/json
+    ```
+    - 프로젝트 빌드 및 실행
+    ```bash
+    #spring boot 프로젝트 빌드
+    $ ./gradlew clean build
+    
+    # 권한 오류가 생긴다면 권한 부여하고 빌드 재시도
+    $ chmod +x ./gradlew
+    
+    # 빌드된 JAR 파일 실행
+    $ java -jar ./build/libs/imnotdurnk_backend-0.0.1-SNAPSHOT.jar
+    ```
+
 # [3] Usage
 
 ## 초기 화면
