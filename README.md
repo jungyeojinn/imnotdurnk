@@ -3,7 +3,7 @@
 # [1] About the Project
 
 ## **주제**
-![image](/uploads/70390f0ecce97de12562eef6e4d8879f/image.png)
+![image](/uploads/70390f0ecce97de12562eef6e4d8879f/Frame 1.png)
 
 개인의 음주 패턴을 관리해 **절제된 음주**와 **안전한 귀가**를 독려하기 위한 음주 습관 개선 서비스 
 
