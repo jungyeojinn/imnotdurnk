@@ -3,7 +3,7 @@
 # [1] About the Project
 
 ## **주제**
-![image](/uploads/70390f0ecce97de12562eef6e4d8879f/Frame 1.png)
+![image](/uploads/70390f0ecce97de12562eef6e4d8879f/image.png)
 
 개인의 음주 패턴을 관리해 **절제된 음주**와 **안전한 귀가**를 독려하기 위한 음주 습관 개선 서비스 
 
@@ -71,7 +71,7 @@
 
 ### Front-end
 
-<img src="exec/포팅 매뉴얼 a7bb50ead2de4d36b773437db35e8261/image.png"  /><br/>
+<img src="exec/포팅 매뉴얼 a7bb50ead2de4d36b773437db35e8261/Frame 1.png"  /><br/>
   
 
 
