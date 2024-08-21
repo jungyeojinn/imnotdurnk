@@ -71,7 +71,7 @@
 
 ### Front-end
 
-<img src="exec/포팅 매뉴얼 a7bb50ead2de4d36b773437db35e8261/Frame 1.png"  /><br/>
+<img src="exec/포팅 매뉴얼 a7bb50ead2de4d36b773437db35e8261/Frame 1.png"  width="500" /><br/>
   
 
 
