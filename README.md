@@ -130,6 +130,12 @@
 
 <br/>
 
+# [4] Contribution
+
+[`contributing guide`][contribution-url]를 참고해주세요. 버그 수정에는 bugfix를, 기능 구현에는 feat을 사용할 수 있습니다.
+
+<br/>
+
 # [5] Acknowledgement
 
 ## Frontend
@@ -174,3 +180,7 @@
 | **박다솔** | **Backend**  |    ds10x2@gmail.com    |
 | **육예진** | **Backend**  |  yukyj0418@gmail.com   |
 | **정여진** | **Backend**  |  yeojin9905@naver.com  |
+
+<!-- url -->
+
+[contribution-url]: CONTRIBUTION.md
