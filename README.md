@@ -148,7 +148,7 @@
 
 
 # [4] Contribution
-[`contributing guide`][contribution-url]를 참고해주세요. 버그 수정에는 fix를, 기능 구현에는 feat을 사용할 수 있습니다.
+[`contributing guide`][contribution-url]를 참고해주세요. 버그 수정에는 bugfix를, 기능 구현에는 feat을 사용할 수 있습니다.
 
 
 # [5] Acknowledgement
