@@ -453,9 +453,9 @@ git clone https://lab.ssafy.com/s11-webmobile2-sub2/S11P12A609.git
 - 해당 페이지에서 회원 탈퇴, 로그아웃, 비밀번호 변경이 가능합니다.
 - 사용자의 프로필 정보 중 이름, 이메일을 제외한 모든 정보는 수정이 가능합니다.
 
-<img src="exec/포팅%20매뉴얼%20a7bb50ead2de4d36b773437db35e8261/1.png" width="200" height="400"/>
-<img src="exec/포팅%20매뉴얼%20a7bb50ead2de4d36b773437db35e8261/2.png" width="200" height="400"/>
-<img src="exec/포팅%20매뉴얼%20a7bb50ead2de4d36b773437db35e8261/3.png" width="200" height="400"/>
+<img src="exec/포팅%20매뉴얼%20a7bb50ead2de4d36b773437db35e8261/1.PNG" width="200" height="400"/>
+<img src="exec/포팅%20매뉴얼%20a7bb50ead2de4d36b773437db35e8261/2.PNG" width="200" height="400"/>
+<img src="exec/포팅%20매뉴얼%20a7bb50ead2de4d36b773437db35e8261/3.PNG" width="200" height="400"/>
 
 
 ## 음주 및 게임 기록 통계
@@ -465,6 +465,7 @@ git clone https://lab.ssafy.com/s11-webmobile2-sub2/S11P12A609.git
 - 월별, 연도별 전체 점수 평균보다 낮은 점수인 경우를 구해 평균보다 과음한 일수를 구합니다.
  
 <img src="exec/포팅%20매뉴얼%20a7bb50ead2de4d36b773437db35e8261/통계.png" width="200" height="400"/>
+<img src="exec/포팅%20매뉴얼%20a7bb50ead2de4d36b773437db35e8261/4.PNG" width="200" height="400"/>
 
 ## 미니 게임
 
