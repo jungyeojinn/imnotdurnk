@@ -65,8 +65,17 @@
 
 ## Technologies
 
+### Back-end
 
-# [2] Getting Started
+[![stackticon](https://firebasestorage.googleapis.com/v0/b/stackticon-81399.appspot.com/o/images%2F1724212070352?alt=media&token=d73946df-b180-45d5-b0ea-f502acc4f407)](https://github.com/msdio/stackticon)
+
+### Front-end
+
+<img src="exec/포팅 매뉴얼 a7bb50ead2de4d36b773437db35e8261/image.png"  /><br/>
+  
+
+
+# [2] 🛠 Getting Started
 
 ## Prerequisites
 *실행환경 설정하기(Ubuntu 기준) - 설치 소프트웨어, 라이브러리*
@@ -515,7 +524,7 @@ git clone https://lab.ssafy.com/s11-webmobile2-sub2/S11P12A609.git
 
 <br/>
 
-# [5] Acknowledgement
+# [5] 📖 Acknowledgement
 
 ## Frontend
 
@@ -545,7 +554,7 @@ git clone https://lab.ssafy.com/s11-webmobile2-sub2/S11P12A609.git
 
 <br/>
 
-# [6] Contact
+# [6] :email: Contact
 
 ### 📧 나안취햄ㅅ어 공식 이메일: imnotdurnk.ssafy@gmail.com
 
