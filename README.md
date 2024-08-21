@@ -147,6 +147,10 @@
 - 도착지에 도착하면 24시간 내 일정이 있었는지 확인하고 가장 가까운 일정에 도착 시간이 자동으로 기록됩니다.
 
 
+# [4] Contribution
+[`contributing guide`][contribution-url]를 참고해주세요. 버그 수정에는 fix를, 기능 구현에는 feat을 사용할 수 있습니다.
+
+
 # [5] Acknowledgement
 
 ## Frontend
@@ -172,3 +176,8 @@
 - [Spring Boot JPA 사용하여 회원가입 구현하기](https://cheese10yun.github.io/spring-guide-directory/)
 - [ETRI 공공 인공지능 오픈 API 발음 교정 - ETRI API 발음 평가 사용법](https://jee00609.github.io//pronunciationcorrection/pronunciationCorrection-ETRIAPI-Error/)
 - [[JAVA] WAV 파일을 RAW Data 로 변환 및 저장하기 (Wav to Raw) ](https://jee00609.github.io//java/how-convert-wav-to-raw2/)
+
+
+
+<!-- url -->
+[contribution-url]: CONTRIBUTION.md
