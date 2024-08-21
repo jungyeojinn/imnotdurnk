@@ -75,18 +75,18 @@
   
 ### Version
 
-|Back-end                         |Front-end                       |
-|-------------|-------------------|------------------|-------------|
-| JDK         | 21               | React           | 18.3.1      |
-| Gradle      | 8.7.0-jdk21-alpine| Vite            | 5.3.4       |
-| NginX       | 1.21.4            | React Native     | 0.74.3      |
-| Jenkins     | 2.452.3           | Expo             | 51.0.23     |
-| Spring Boot | 3.3.1             | Node             | 20.15.0     |
-| MySQL       | 9.0.1             | Eslint           | 8.57.0      |
-| Docker      | 27.1.1            | tanstack-query   | 5.51.11     |
-| Ubuntu      | 20.04.6           | VS Code          | 1.92.1      |
-| IntelliJ IDEA| 2024.1.4          | Zustand          | 4.5.4       |
-| Redis       | 7.4.0             | JWT decode       | 4.0.0       |
+| Back-end       | Version            | Front-end        | Version |
+|----------------|---------------------|------------------|---------|
+| JDK            | 21                  | React            | 18.3.1  |
+| Gradle         | 8.7.0-jdk21-alpine | Vite             | 5.3.4   |
+| NginX          | 1.21.4              | React Native     | 0.74.3  |
+| Jenkins        | 2.452.3             | Expo             | 51.0.23 |
+| Spring Boot    | 3.3.1               | Node             | 20.15.0 |
+| MySQL          | 9.0.1               | Eslint           | 8.57.0  |
+| Docker         | 27.1.1              | tanstack-query   | 5.51.11 |
+| Ubuntu         | 20.04.6             | VS Code          | 1.92.1  |
+| IntelliJ IDEA  | 2024.1.4            | Zustand          | 4.5.4   |
+| Redis          | 7.4.0               | JWT decode       | 4.0.0   |
 
 
 
