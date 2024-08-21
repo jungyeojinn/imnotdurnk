@@ -75,6 +75,8 @@
   
 ### Version
 
+|Back-end                         |Front-end                       |
+|-------------|-------------------|------------------|-------------|
 | JDK         | 21               | React           | 18.3.1      |
 | Gradle      | 8.7.0-jdk21-alpine| Vite            | 5.3.4       |
 | NginX       | 1.21.4            | React Native     | 0.74.3      |
@@ -85,6 +87,7 @@
 | Ubuntu      | 20.04.6           | VS Code          | 1.92.1      |
 | IntelliJ IDEA| 2024.1.4          | Zustand          | 4.5.4       |
 | Redis       | 7.4.0             | JWT decode       | 4.0.0       |
+
 
 
 # [2] 🛠 Getting Started
